@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poo-php</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="bg-blue-50 border-b-2 h-16 fixed w-full top-0 z-20 border-b-blue-200 flex items-center justify-between px-3">
+            <h1 class="font-serif font-semibold text-2xl">CODE-BLOG</h1>
+            <button type="button" class="lg:hidden" id="btn_menu"><img src="./img/icon_menu.png" class="w-10" alt="icon_menu" ></button>
+        </div>
+    </header>
+
+    <main class="mt-16">
+        <aside class="bg-slate-50 w-80 hidden fixed lg:block lg:fixed top-16 z-20 overflow-y-scroll inset-0" id="menu_box">
+            <nav class="p-3">
+                <h1 class="text-center mb-2 text-2xl font-medium">PHP-POO</h1>
+                <ul class="list-none block">
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#introduccion">Introducción</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#clases-objetos">Clases y Objetos</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#metodos-y-atributos">Metodos y Atributos</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#constructores-y-destructores">Constructores y Destructores</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#modificadadores-de-acceso">Modificadores de acceso</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#herencia">Herencia</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#static">Static</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#interfaces">Interfaces</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#clases-y-metodos-abstractos">Clases y Metodos abstractos</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#autoload">Autoload</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#traits">Traits</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#namespaces">Namespaces</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#platamiento-e-ini">Plantamiento e ini</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#creacion-de-nuestros-modelos">Creación de nuestros modelos</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#configuracion-de-autoload">Configuración de Autoload</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#creacion-de-request-y-enrutador">Creación de Request y Enrutador</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#renderizar-vistas-y-clase-plantilla">Rendirzar vistas y Clase plantilla</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#vistas-listar-estudiantes-y-secciones">Vistas:Listar Estudiantes y Secciones</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#vistas-agregar-estudiantes-y-secciones">Vistas:Agregar Estudiantes y Secciones</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#vistas-editar-ver-y-eliminar-estudiantes">Vistas:Editar, ver y eliminar estudiantes</a></li>
+                    <li class="border-l-2 hover:border-l-sky-500 mb-2 hover:text-sky-500 p-2"><a href="#vistas-editar-y-eliminar-secciones">Vistas:Editar y Eliminar secciones</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="lg:ml-80">
+            <div class="pt-3 px-5 block">
+                <div class="scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="introduccion">
+                    <h2 class="font-bold text-3xl mb-3">Introducción</h2>
+                    <h3 class="font-semibold text-2xl">Tipos de programación</h3>
+                        <div class="mb-3 mt-3">
+                            <h4 class="text-2xl mb-2">Programación lineal</h4>
+                            <p>Es cuando desarrollamos todo el código disponiendo de instrucciones PHP alternando con el HTML de la página.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4 class="text-2xl mb-2">Programación Estructurada</h4>
+                            <p>Es cuando planteamos funciones que agrupan actividades a desarrollar y luego dentro de la página llamamos a dichas funciones que pueden estar dentro del mismo archivo o en una librería separada.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4 class="text-2xl mb-2">Programación Orienda a Objetos</h4>
+                            <p>Es cuando plantemos clases y definimos objetos de las mismas (Este es el objetivo del blog, aprender la metodologia de programación orientada a objetos y la sintaxis particular de PHP para poo).</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4 class="text-2xl mb-2">Métodos</h4>
+                            <p>Un articulo tiene <strong>Métodos</strong></p>
+                            <ul class="mb-3 list-disc">
+                                <li class="ml-5">Crear</li>
+                                <li class="ml-5">Eliminar</li>
+                                <li class="ml-5">Editar</li>
+                                <li class="ml-5">Editar</li>
+                                <li class="ml-5">Ver</li>
+                            </ul>
+                            <h4 class="text-2xl mb-2">Atributos</h4>
+                            <p>Un articulo tiene <strong>Atributos</strong></p>
+                            <ul class="list-disc">
+                                <li class="ml-5">ID</li>
+                                <li class="ml-5">Titulo</li>
+                                <li class="ml-5">Contenido</li>
+                                <li class="ml-5">Fecha</li>
+                            </ul>
+                        </div>
+                </div><!---Introduccion--->
+                <div class="scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="clases-objetos">
+                    <h2 class="font-bold text-3xl mb-3">Clases y objetos</h2>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                        <span class="text-blue-800">?php<br>
+                            class Persona{ <span class="text-green-600">//Definimos una clase con el nombre de persona</span><br>
+                            <div class="ml-6">
+                                <span class="text-green-600">//Atributos</span><br>
+                                    public $nombre = "pedro";<br>
+                            
+                                    <span class="text-green-600">//Metodos</span><br>
+                                    <span class="text-green-600">//los parametros van dentro de los parentesis</span><br>
+                                    public function hablar($mensaje){<span class="text-green-600">//Definimos un metodo con el nombre hablar</span><br>
+                                        echo $mensaje;<br>
+                                    } <br>
+                                } 
+                                <br>
+                                $persona = new Persona();<span class="text-green-600">//instanciamos la clase persona y la asignamos a una nueva variable. Se creo un nuevo objeto</span>
+                                echo $persona->nombre;<span class="text-green-600">//extraemos el nombre de la persona</span>
+                                $persona->hablar("Hola, Buenos días"); <span class="text-green-600">//llamado a un metodo con un parametro e ingresando un mensaje al parametro</span>
+                            </div>
+                            ?></span>
+                        </code>
+                    </div>
+                </div><!---Clases y objetos-->
+
+                <div class="scroll-margin-top border-b-2 border-blue-800 mb-3" id="metodos-y-atributos">
+                    <h2 class="font-bold text-3xl mb-3">Metodos y atributos</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">Atributos</h3>
+                        <ul class="list-disc mb-3">
+                            <li class="ml-5">Simples variables o Arrays</li>
+                            <li class="ml-5">Definición del tipo del atributo</li>
+                            <li class="ml-5"><strong>(public, private, protected)</strong></li>
+                        </ul>
+                        <h3 class="text-2xl mb-3">Metodos</h3>
+                        <ul class="list-disc">
+                            <li class="ml-5">Accede a tributos con $this->nombre</li>
+                            <li class="ml-5">Podemos acceder a otros metodos con <strong>$this</strong> o <strong>self::</strong></li>
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">Ejemplo</h3>
+                        <p>Tenemos una escuela donde registraremos nombre y apellido de cada persona. Usaremos 2 atributos que son su nombre y apellido y 2 metodos que son guardar y mostrar</p>
+                        <p><strong class="mr-1">$this</strong>palabra reservada para hacer referencia a un atributo o aun método.</p>
+                        <p><strong class="mr-1">self::</strong>palabra reservada para hacer referencia a un método dentro de otro método.</p> 
+                    </div>
+                    <div class="mb-3 rounded bg-slate-100 p-2">
+                        <code>
+                        <span class="text-blue-800">?php</span><br>
+                           <span class="text-blue-800">class Persona{</span> <br>
+                                <div class="ml-6">
+                                   <span class="text-green-600">//atributos</span><br>
+                                   <span class="text-blue-800">public $nombre = array();</span><span class="text-green-600">//creamos un array</span><br>
+                                   <span class="text-blue-800">public $apellido = array();</span>
+                                    <br>
+                                    <span class="text-green-600">//metodos</span><br>
+                                    <span class="text-green-600">//pasamos los atributos como argumentos en la funcion guardar</span><br>
+                                    <span class="text-blue-800">public function guardar($nombre, $apellido){</span><br>
+                                    <span class="text-blue-800">$this->nombre[] = $nombre;</span><span class="text-green-600">//hacemos referencia a los atributos con la plabra $this</span><br>
+                                    <span class="text-blue-800">$this->apellido[] = $apellido;</span><br>
+                                    <span class="text-blue-800">}</span> 
+                                    <br>
+                                    <span class="text-blue-800">public function mostrar(){</span><br>
+                                        <span class="text-blue-800">for ($i=0; $i < count($this->nombre); $i++){</span><br>
+                                            <span class="text-blue-800">self::formato($this->nombre[$i], $this->apellido[$i]);</span><span class="text-green-600">//hacemos referencia o llamado de un metodo dentro de otro</span><br>
+                                            <span class="text-green-600">//otra alternativa</span><br>
+                                            <span class="text-blue-800">$this->formato($this->nombre[$i], $this->apellido[$i]);</span><span class="text-green-600">//hacemos referencia o llamado de un metodo dentro de otro</span><br>
+                                       <span class="text-blue-800">}</span><br>
+                                    <span class="text-blue-800">}</span>
+                                    <br>
+                                    <span class="text-blue-800">public function formato($nombre, $apellido){<br>
+                                        echo "Nombre ".$nombre." Apellido ". $apellido;<span class="text-green-600">//imprimimos los atributos $nombre y $apellido</span><br>
+                                    }</span>
+                                    <br>
+                                <span class="text-blue-800">}</span>
+                                <br>
+                                <span class="text-green-600">//objeto de la clase</span><br>
+                                <span class="text-blue-800">$persona = new Persona();</span><br>
+                                <span class="text-green-600">//llamamos al metodo guaradar y asignamos el nombre y apellido;</span><br>
+                                <span class="text-blue-800">$persona->guardar("pedro","hernandez");</span><br>
+                                <span class="text-blue-800">$persona->guardar("jose","garcia");</span><br>
+                                <span class="text-green-600">//llamamos al metodo mostrar para ver los datos</span><br>
+                                <span class="text-blue-800">$persona->mostrar();</span><br>
+                            </div>
+                        <span class="text-blue-800">?></span>
+                        </code>
+                    </div>
+                </div><!---Metodos y atributos-->
+
+                <div class="scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="constructores-y-destructores">
+                    <h2 class="font-bold text-3xl mb-3">Constructores y destructores</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">Metodo constructor</h3>
+                        <p><strong class="mr-2">__construct</strong>Al instaciar la clase el método se ejecuta al comienzo de manera automatica.</p>
+                        <ul class="list-disc mb-3">
+                            <li class="ml-5"><strong>Debe ser publico</strong></li>
+                            <li class="ml-5"><strong>No debe retornar nada</strong></li>
+                        </ul>
+                        <h3 class="text-2xl mb-3">Metodo destructor</h3>
+                        <p><strong class="mr-2">__destruct</strong>Este método támbien se ejecuta de manera automatica pero al final de la clase.</p>
+                        <ul class="list-disc">
+                            <li class="ml-5"><strong>Debe ser publico </strong></li>
+                            <li class="ml-5"><strong>No debe retornar nada</strong></li>
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">Ejemplo</h3>
+                        <p> Aplicacion tipo loteria donde le indicaremos un numero aleatorio y la cantidad de intentos, esta debe mostrar los intentos y al final debe mostrar un mensaje si gano o no el concursante</p>
+                    </div>
+                    <div class="mb-3 rounded bg-slate-100 p-2">
+                        <code>
+                        <span class="text-blue-800">?php<br>
+                        <span class="text-blue-800">class Loteria{ <br>
+                            <div class="ml-6">                              
+                            <span class="text-green-600">//atributos</span><br>
+                            public $numero; <br>
+                            public $intentos; <br>
+                            public $resultado = false; <br>  
+                            <span class="text-green-600">//metodos</span><br>
+                            <span class="text-green-600">//creamos el metodo constructor y pasamos como parametros los atributos</span><br>
+                                public function __construct($numero, $intentos){ <br>
+                                    $this->numero = $numero; <span class="text-green-600">//hacemos referencia de los atributos de la clase
+                                    </span><br>
+                                    $this->intentos = $intentos; <br>
+                                }
+                                <br>
+                                public function sortear(){ <br>
+                                    $minimo = $this->numero / 5;<span class="text-green-600">//realizara un division entre el numero ingresado con el numero que le asignemos</span><br>
+                                    $maximo = $this->numero * 2; <span class="text-green-600">//realizara una multiplicacion con el numero ingresado y el numero que le  asignemos</span><br> 
+                                    for ($i=0; $i < $this->intentos; $i++) { <br>
+                                        $int = rand($minimo, $maximo);<span class="text-green-600">// genera numeros aleatorios en base a los parametros que le asignemos</span><br>
+                                        self::intentos($int);<br>
+                                    }<br>
+                                }
+                                <br>
+                                public function intentos($int){<br>
+                                    if($int == $this->numero){ <span class="text-green-600">//si el numero generado aleatoriamente es igual al numero ingresado por el usuario</span><br>
+                                        echo $int." es igual  ".$this->numero;<br>
+                                        $this->resultado = true;<br>
+                                    }else{<br>
+                                        echo $int." no es igual ". $this->numero;<br>
+                                    }<br>
+                                }
+                                <br>
+                                public function __destruct(){<br>
+                                    if ($this->resultado) {<br>
+                                        echo "Felicidades  has ganado numero del sorteo ganador es ".$this->numero.""."numero de intentos".$this->intentos;<br>
+                                    }else{<br>
+                                        echo "Has perdido sigue participando";<br>
+                                    }<br>
+                                }<br>
+                            }
+                            <br>
+                            <span class="text-green-600">//creamos un nuevo objeto de la clase</span><br>
+                            <span class="text-green-600">
+                            /*
+                            como la clase tiene el metodo constructor nos pide que le asignemos un valor para los parametros que contenga el constructor 
+                            en este caso el constructor tiene dos atributos $numero e $intentos
+                            */</span><br>
+                            $loteria = new Loteria(5,6); <br>
+                            <span class="text-green-600">//llamamos al metodo sortear</span><br>
+                            $loteria->sortear();<br>
+                            </div>
+                        ?>
+                        </code>
+                    </div>
+                </div><!--constructores y destructores-->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="modificadadores-de-acceso">
+                    <h2 class="font-bold text-3xl mb-3">Modificadadores de acceso</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">¿Que son los modificadores de acceso?</h3>
+                        <p>Son simples propiedades que podemos añadirles a nuestros métodos y atributos de nuestra clase, estas nos ayudaran con los accesos y la extraccíon de métodos o a tributos.</p>
+                        <ul class="my-3 list-disc">
+                            <h3 class="text-2xl mb-3">TIPOS</h3>
+                            <li class="ml-5"><strong>Public</strong></li>
+                            <p>Se puede realizar de todo con el atributo o el método.</p>
+                            <li class="ml-5"><strong>Private</strong></li>
+                            <p>Un metodo privado solo puede ser llamado desde otro metodo de la clase. No podemos llamar a un metodo privado desde donde definimos un objeto.</p>
+                            <li class="ml-5"><strong>Protected</strong></li>
+                            <p>Un atributo o metodo protected puede ser accedido por la clase, por todas sus subclases pero no por los objetos que definimos de dichas clases.</p>
+                        </ul>
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php <br>                               
+                                    class Facebook{ <br>  
+                                    <div class="ml-6">
+                                       <span class="text-green-600">//atributos</span><br>  
+                                        public $nombre; <br>  
+                                        public $edad; <br>  
+                                        private $pass;<br>  
+                                        <span class="text-green-600">//metodos</span> <br>
+                                        <span class="text-green-600">//creamos el metodo constructor</span>  
+                                        public function __construct($nombre, $edad, $pass){ <br>  
+                                            $this->nombre = $nombre;<br>  
+                                            $this->edad = $edad;<br>  
+                                            $this->pass = $pass;<br>  
+                                        }
+                                        <br>  
+                                        public function verInformacion(){<br>  
+                                            echo "Nombre: ".$this->nombre; <br>  
+                                            echo "Edad: ".$this->edad; <br>  
+                                            self::cambiarPass("4321");<span class="text-green-600">//llamamos al metodo cambiarPass 
+                                             y le asignamos un nuevo valor</span><br> 
+                                            echo "Password: ".$this->pass; <br>  
+                                        }
+                                        <br>  
+                                        <span class="text-green-600">//metod private solo puede ser modificado dentro de la clase llamandolo dentro de otro metodo</span><br>  
+                                        private function cambiarPass($pass){<br>  
+                                            $this->pass = $pass;<br>  
+                                        }<br>  
+                                    }
+                                    <br>  
+                                    <span class="text-green-600">//creamos el objeto de la clase</span><br>  
+                                    $facebook = new Facebook("jose garcia","22","1234");<br>  
+                                    <span class="text-green-600">//llamamos al metod verInformacion</span><br>  
+                                    $facebook->verInformacion();<br>  
+                                    <span class="text-green-600">//no podemos acceder a los atributos private con el objeto de la clase solo podemos acceder a los atrubituos de tipo public<br>  
+                                    /*echo $facebook->pass;*/<br>  
+                                    //no podemos acceder a metodos de tipo private nos maracaria un error<br>  
+                                    //solo podemos llamar al metodo private dentro de la misma clase <br>  
+                                    /*$facebook->cambiarPass("4321");*/</span><br>  
+                                    </div>
+                                ?>
+                            </span>
+                        </code>
+                    </div>
+                </div><!---modificadores acceso-->
+                
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="herencia">
+                    <h2 class="font-bold text-3xl mb-3">Herencia</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">¿Que es la herencia</h3>
+                        <p>Significa que se pueden crear nuevas clases partiendo de clases existentes, que tendrán todos los atributos y los métodos de su superclase o clase padre y ademas se le podrán añadir otros atributos y métodos propios.</p>
+                    </div>
+                    <div class="mb-3 bg-red-300 p-2 rounded">
+                        <h3 class="text-2xl mb-3 font-bold text-red-700">IMPORTANTE</h3>
+                        <strong>php no permite la herencia multiple.<br>
+                        Los metodos de tipo protected pueden ser heredados pero no pueden ser utilizados directamente de la clase que hereda
+                        "Moto" primero debemos crear un metodo de tipo publico para despues llamar al metodo estado() de tipo protected y asi poder utilizarlo.</strong>
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">    
+                                ?php<br>                            
+                                    class Vehiculo{ <br>
+                                    <div class="ml-6">
+                                       <span class="text-green-600">//atributos</span><br>
+                                        public $motor = false;<br>
+                                        public $marca;<br>
+                                        public $color;<br>
+                                        <span class="text-green-600">//Metodos</span><br>
+                                        <span class="text-green-600">//verifica si el motor esta encendido;</span><br>
+                                        protected function estado(){ <br>
+                                                if ($this->motor) {<br>
+                                                    echo "El motor esta encendido";<br>
+                                                }else{<br>
+                                                    echo "El motor esta apagado";<br>
+                                                }<br>
+                                        }
+                                        <br>
+                                        public function encender(){<br>
+                                            if ($this->motor) {<br>
+                                                echo "Cuidado el motor ya esta encendiendo";<br>
+                                            }else{<br>
+                                                echo "El motor ahora esta encendido";<br>
+                                                $this->motor = true;<br>
+                                            }<br>
+                                        }<br>
+                                    }
+                                    <br> 
+                                    <span class="text-green-600">//Creamos la clase moto y con la plabra reservada extends de php  indicamos que la clase moto hereda de la clase Vehiculo</span><br>
+                                    class Moto extends Vehiculo{<br>
+                                    <span class="text-green-600">/*los metodos de tipo protected pueden ser heredados pero no pueden ser utilizados directamente de la clase moto primero debemos crear un metodo de tipo publico para despues llamar al metodo estado de tipo protected y asi poder utilizarlo.
+                                    */</span><br>
+                                    <span class="text-green-600">//metodos</span><br>
+                                        public function estadoMoto(){<br>
+                                            self::estado();<br>
+                                        }<br>
+                                    }
+                                    <br>
+                                    <span class="text-green-600">
+                                    /*creamos un objeto de la clase moto y como se podra ver no necesitamos tener atributos o metodos en la clase moto podemos utilizar los metodos y atributos de la clase Vehiculo*/ 
+                                    </span><br>
+                                    $moto = new Moto();<br>
+                                    $moto->estadoMoto();<br>
+                                    $moto->encender();<br>
+
+                                    <span class="text-green-600">
+                                    /*creamos una clase llamada cuatrimoto que hereda de la clase moto pero a la vez hereda de la clase vehiculo
+                                    y podra utilizar todos sus atributos y metodos.
+                                    */</span><br>
+                                    class Cuatrimoto extends Moto{<br>
+
+                                    }
+                                    <br>
+                                    $cuatri = new Cuatrimoto();<br>
+                                    $cuatri->encender();<br>
+                                    </div>
+                                ?>      
+                            </span>
+                        </code>
+                    </div>
+                </div><!---HERENCIA-->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="static">
+                    <h2 class="font-bold text-3xl mb-3">Static</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">¿Que es static?</h3>
+                        <p>Un metodo estatico pertenece a la clase pero no puede acceder a los atributos de una instancia. La caracteristica fundamental es que un metodo estatico se puede llamar sin tner que crear un objeto de dicha clase.</p>
+                        <p>
+                            <strong>    
+                            Los metodos static pueden se heredados <br>
+                            un metodo estatico no puede acceder a los atributos de la clase
+                            </strong>
+                        </p>
+                        <p>Una propiedad declarada como static no puede ser accedida con un objeto de la clase instanciado (aun que un metodo estatico si lo puede hacer).</p>
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php<br>
+                                    class Pagina{<br>
+                                <div class="ml-6">
+                                       <span class="text-green-600">//atributos</span><br>
+                                        public $nombre = "Mi pagina web";<br>
+                                        public static $url = "www.mipaginaweb.com";<span class="text-green-600">//atributo satatico</span><br>
+
+                                        <span class="text-green-600">//metodos</span><br>
+                                        public function bienvenida(){<br>
+                                            echo "Bienvenidos  a". $this->nombre;<br>
+                                            echo "URL ". self::$url;<span class="text-green-600">//accediendo a un atributo estatico con la palabra reservada self::</span><br>
+                                            <span class="text-green-600">//otra forma de acceder a metodos o atributos estaticos</span><br>
+                                            echo "URL". Pagina::$url;<br>
+                                        }
+                                        <br>
+                                        <span class="text-green-600">
+                                        //los metodos static no pueden acceder a los atributos de la clase 
+                                        </span><br>
+                                        public static function bienvenida2(){ <span class="text-green-600">//metodo estatico</span><br>
+                                            echo "Bienvenidos". self::$url;<span class="text-green-600">//los atributos de tipos static pueden ser accedidos dentro de un metodo static</span><br>
+                                        }<br>
+                                    }
+                                    <br>
+                                    <span class="text-green-600">
+                                    //$pagina = new Pagina();//objeto de la clase <br>
+                                    //$pagina->bienvenida();<br>
+                                    //llamamos al metodo bienvenida2 de tipo static sin hacer un objeto de la clase<br>
+                                    </span>
+                                    Pagina::bienvenida2();<br>
+                                </div>
+                                ?>
+                            </span>                           
+                        </code>
+                    </div>
+                </div><!---static-->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="interfaces">
+                    <h2 class="font-bold text-3xl mb-3">Interfaces</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">Que es una interfaz</h3>
+                        <p>las interfaces de objetos permiten crear código con el cual especificanos qué métodos deben ser 
+                            implementados por una clase. Las interfaces son definidas utlizando la palabra interface de la misma forma que con clase estandar
+                            pero sin metodos que tengan su contenido definido.</p>
+                        <p class="text-red-600">Todos los métodos declarados en una interfaz deben ser públicos.</p>    
+                        <h3 class="text-2xl mb-3">Ejemplo</h3>
+                        <p>Aplicación para automoviles donde se debera tener gasolina para poder encender el automovil, ademas este podra
+                        usarse pero gastara gasolina y una ves que su tanque este vacio se va ha apagar</p>
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php <br>                                
+                                <span class="text-green-600">//dentro de la interfaz simpre debe definir los metodos de tipo public</span><br> 
+                                    interface Auto{<span class="text-green-600">//creamos una interface con el nombre auto</span><br>
+                                        <span class="text-green-600">//metodos</span><br>
+                                        public function encender();<br>
+                                        public function apagar();<br>
+                                    }
+                                    <br>
+                                    <span class="text-green-600">//la interfaz gasolina hereda los metodos de la interfaz Auto</span><br>
+                                    interface gasolina extends Auto{<br>
+                                        public function vaciarTanque();<br>
+                                        public function llenarTanque($cant);<br>
+                                    }
+                                    <br>
+                                    <span class="text-green-600">//la clase deportivo implementa los metodos de la interfaz gasolina</span><br>
+                                    class Deportivo implements gasolina{<span class="text-green-600">//creamos la clase Deportivo</span> <br>
+                                        <span class="text-green-600">//atributos</span><br>
+                                        private $estado = false;<br>
+                                        private $tanque = 0;<br>
+                                        <span class="text-green-600">//metodos</span><br>
+                                        public function estado(){<br>
+                                            if($this->estado){<br>
+                                                echo "El  estado del auto es encendido  y tiene ". $this->tanque;<br>
+                                            }else{<br>
+                                                echo "el auto esta apagado por falta de gasolina";<br>
+                                            }<br>
+                                        }
+                                        <br>
+                                        <span class="text-red-600">//para que los metodos de la clase Deportivo funcionen debe de tener los metodos declarados de ambas interfazes</span><br>
+                                        public function encender(){<br>
+                                            if ($this->estado) {<br>
+                                                echo "no puedes encender el auto dos veces";<br>
+                                            }else{ <br>
+                                                if ($this->tanque <= 0) { <br>
+                                                    echo "el carro no tiene gasolina";<br>
+                                                }else{
+                                                    echo "EL auto encendido";<br>
+                                                    $this->estado = true;<br>
+                                                }<br>
+                                            }<br>
+                                        }
+                                        <br>
+                                        public function apagar(){<br>
+                                            if ($this->estado) {<br>
+                                                echo "Auto apagado";<br>
+                                                $this->estado = false;<br>
+                                            }else{<br>
+                                                echo "El auto ya esta apagado"; <br>
+                                            } <br>
+                                        }
+                                        <br>
+                                        public function vaciarTanque(){ <br>
+                                            $this->tanque = 0; <br>
+                                        } <br>
+                                        public function llenarTanque($cant){ <br>
+                                            $this->tanque = $cant; <br>
+                                        }
+                                        <br>
+                                        public function usar($km){ <br>
+                                            if ($this->estado) { <br>
+                                                $reducir = $km / 3; <br>
+                                                $this->tanque = $this->tanque - $reducir; <br>
+                                                if ($this->tanque <= 0) { <br>
+                                                    $this->estado = false; <br>
+                                                } <br>
+                                                }else{ <br>
+                                                    echo "El auto esta apagado y no se pude usar"; <br>
+                                                } <br>
+                                        } <br>
+                                    }
+                                    <br>
+                                    <span class="text-green-600">//creamos el objeto de la clase</span>
+                                    $obj = new Deportivo(); <br>
+                                    <span class="text-green-600">//llamamos a los metodos de la clase Deportivo</span><br>
+                                    $obj->llenarTanque(100);<br>
+                                    $obj->encender(); <br>
+                                    $obj->usar(350); <br>
+                                    $obj->estado(); <br>
+                                ?>
+                            </span>                           
+                        </code>
+                    </div>
+                </div><!---Interfaces-->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="clases-y-metodos-abstractos">
+                    <h2 class="font-bold text-3xl mb-3">Clases y metodos abstractos</h2>
+                    <div class="mb-3">
+                        <p> 
+                        Una clase abstracta tiene por objetivo agrupar atributos y métodos que luego serán heredados por otras subclases.<br>
+                        Las clases definidas como abstractas no se pueden intanciar y cualquier clase que contiene al menos un metodos abstracto
+                        debe ser definida como tal. Los métodos definidos como adbtractos simplemente declaran la firma del metodos, pero
+                        no pueden definir la implementación .</p>
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php<br>
+                                <span class="text-green-600">//definimos una clase abstracta</span><br> 
+                                    abstract class Molde{<br>
+                                    <span class="text-green-600">//atributos</span><br>
+
+                                        <span class="text-green-600">//Definimos metodos abstractos metodos</span><br>
+                                        abstract public function ingresagarNombre($nombre);<br>
+                                        abstract public function obtenerNombre();<br>
+                                    }
+                                    <br>
+                                    class Persona extends Molde{<br>
+                                        <span class="text-green-600">//atributos</span><br>
+
+                                        <span class="text-green-600">//metodos<br>
+                                        /*Se deben implementar los metodos abstractos de la clase Molde
+                                        podemos agregar parametros opcionales al metodos ingresarNombre sin importar que de la clase original solo tenga 
+                                        un parametro*/</span><br>
+                                        public function ingresagarNombre($nombre, $username = " cubo14 "){<br>
+                                        $this->nombre = $nombre . $username;<span class="text-green-600">//concatenamos el valor de $username</span><br>
+                                        }<br>
+                                        public function obtenerNombre(){<br>
+                                            echo $this->nombre;<br>
+                                        }<br>
+                                    }
+                                    <br>
+                                    $persona = new Persona();<br>
+                                    $persona->ingresagarNombre("jesus garcia");<br>
+                                    $persona->obtenerNombre();<br>
+                                ?>
+                            </span>                           
+                        </code>
+                    </div>
+                </div><!--Clase y metodos abstractos--->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="autoload">
+                    <h2 class="font-bold text-3xl mb-3">Autoload</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">¿En que nos ayuda autoload?</h3>
+                        <p> 
+                        Muchos desarrolladores que escriben aplicaciones orientadas a objetos crean un fichero fuente PHP para cada
+                        definición de clase. Una de las mayorers molestias es <strong>tener que hacer una larga lista de 
+                        includes al comienzo de cada script.</strong> <br>
+                        Se puede definir una función que es automaticamente invocada que en caso de que se esté intentando utilizar una 
+                        clase / interfaz que todavia no haya sido definida. Al invocar a esta función el motor de scripting da una última 
+                        oportunidad para cargar la clase antes que php falle con un error.
+                        </p>
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php <br>
+    
+                                <span class="text-green-600">//crear una carpeta llamada clases dentro de la carpeta crear dos archivos persona.php  y auto.php</span><br>
+
+                                function autoload($clase){<br>
+                                    include "clases/". $clase . ".php";<br>
+                                }
+                                <br>
+                                //Registra las funciones dadas como implementación de __autoload<br>
+                                spl_autoload_register('autoload');<br>
+                                
+                               <span class="text-green-600">/*llamamos a la clase y su metodo sin que exista la herencia entre clases<br>
+                                solo podemos llamar a metodos de tipo static<br>
+                                */</span>
+                                <br>
+                                Persona::mostrar("hola personas del mundo");<br>
+                                Auto::mostrar("Hola mundo<br>        
+                                ?><br>
+
+                                ?php
+                                <span class="text-green-600">//en la carpeta clases crear el arvhivo Auto.php "pegar este codigo"</span><br>
+                                class Auto{<br>
+                                    
+                                   <span class="text-green-600">//metodo</span><br>
+                                    public static function mostrar($mensaje){<br>
+                                        echo "La clase auto dice ". $mensaje;<br>
+                                    }<br>
+                                }
+                                <br>
+                                ?><br>
+
+                                ?php<br>
+                                    <span class="text-green-600">//En la carpeta clases crear el archivo persona.php pegar este codigo</span><br>
+                                    class Persona{<br>
+                                       <span class="text-green-600">//metodo</span><br>
+                                        public static function mostrar($mensaje){<br>
+                                            echo "La clase persona dice ". $mensaje;<br>
+                                        }<br>
+                                    }
+                                    <br>
+                                ?>
+                            </span>                           
+                        </code>
+                    </div>
+                </div><!----Autoload-->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="traits">
+                    <h2 class="font-bold text-3xl mb-3">Traits</h2>
+                    <div class="mb-3">
+                        <h3 class="text-2xl mb-3">¿Qué es un trait?</h3>
+                        <p>
+                        Son un mecanismo de reutilización de código en lenguajes de herencia simple, como PHP. El objetivo de un rasgo es el de reducir las limitaciones propias de la herencia simple permitiendo que los desarrolladores reutilicen a voluntad conjuntos de métodos sobre varias clases independientes y pertenecientes a clases jerárquicas distintas. La semántica a la hora combinar Traits y clases se define de tal manera que reduzca su complejidad y se eviten los problemas típicos asociados a la herencia múltiple y a los Mixins. <br>
+                        Un Trait es similar a una clase, pero con el único objetivo de agrupar funcionalidades muy específicas y de una manera coherente. No se puede instanciar directamente un Trait. Es por tanto un añadido a la herencia tradicional, y habilita la composición horizontal de comportamientos; es decir, permite combinar miembros de clases sin tener que usar herencia. </p>
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php <br>
+                                <span class="text-green-600">//creamos un trait</span><br>
+                                    trait Persona{<br>
+                                        <span class="text-green-600">//un trait puede contener atributos y metodos</span><br>
+                                        public $nombre;<br>
+                                        public function mostrarNombre(){<br>
+                                            echo $this->nombre;<br>
+                                        }<br>
+                                        <span class="text-green-600">//podemos crear metodos abstractos</span><br>
+                                        abstract function asignarNombre($nombre);<br>
+                                    }
+                                    <br>
+                                    <span class="text-green-600">//declaramos un segundo trait con el nombre Trabajador</span><br>
+                                    trait Trabajador{<br>
+                                        protected function saludo(){<br>
+                                            echo "hola buenos días";<br>
+                                        }<br>
+                                    }
+                                    <br>
+                                    <span class="text-green-600">//creamos una clase usuario</span><br>
+                                    class Usuario{<br>
+                                        <span class="text-green-600">//llamamos al trait Persona</span><br>
+                                        use Persona, Trabajador;<span class="text-green-600">//podemos llamar multiples trait separando con una coma</span><br>
+                                        public function asignarNombre($nombre){<br>
+                                            $this->nombre = $nombre . self::saludo();<br>
+                                        }<br>        
+                                    }<br>
+                                    <span class="text-green-600">//creamos el objeto de la clase</span><br>
+                                    $user = new Usuario();<br>
+                                    $user->asignarNombre("juan villa");<br>
+                                    $user->mostrarNombre();<br>
+                            </span>                           
+                        </code>
+                    </div>
+                </div><!--Traits--->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="namespaces">
+                    <h2 class="font-bold text-3xl mb-3">Namespaces</h2>
+                    <div class="mb-3">
+
+                    </div>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php <br>
+                                    namespace Models; <span class="text-green-600">//creamos un espacio de nombre con la palabra reservada namespace</span><br>
+                                    <span class="text-green-600">//dentro del archivo persona.php</span><br>  
+                                        class Persona{<br>
+                                            public static function hola(){<br>
+                                                echo " soy el models de la clase persona";<br>
+                                            }<br>
+                                        }
+                                        <br>
+                                ?>
+                                <br>
+                                ?php <br>
+                                    namespace Controllers;<span class="text-green-600">//creamos un espacio de nombre con la palabra reservada namespace</span><br>
+
+                                   <span class="text-green-600">//dentro del archivo personacontrollers.php</span><br>
+                                    class Personacontrollers{ <br>
+                                        public static function hola(){ <br>
+                                            echo " soy el controlador de la clase persona"; <br>
+                                        } <br>
+                                    } <br>
+                                ?>
+                                <br>
+                                ?php <br>
+                                <span class="text-green-600">//dentro del archivo index.php</span><br>
+                                require_once "api/models/persona.php"; <br>
+                                require_once "api/controllers/personacontrollers.php"; <br>
+                                Models\Persona::hola(); <br>
+                                Controllers\Personacontrollers::hola();<br>
+                                ?>
+                            </span>                           
+                        </code>
+                    </div>
+                    <h2 class="text-2xl my-3 font-bold">Ejemplo con Autoload</h2>
+                    <div class="mb-3 bg-slate-100 p-2 rounded">
+                        <code>
+                            <span class="text-blue-800">
+                                ?php <br>
+                                <span class="text-green-600">//todo este codigo dentro del index</span> <br>
+                               <span class="text-green-600">//autoload funcion anonima</span> <br>
+                                    spl_autoload_register(function($clase){<br>
+                                        $ruta= "api/". str_replace("\\", "/", $clase) .".php";<span class="text-green-600">//creamos una ruta para las clases
+                                        </span><br>
+                                        if (is_readable($ruta)){<span class="text-green-600">//si el archivo es leible se incluira en caso contrario nos madara un mensaje</span><br>
+                                            require_once $ruta;<span class="text-green-600">//requiere el archivo una vez en el index
+                                            </span><br>
+                                        }else{<br>
+                                            echo "El archivo no existe";<br>
+                                        }<br>
+                                    });
+                                    <br>
+                                    <span class="text-green-600">//llamamos a los archivos models y controllers por namespace, nombre de la clase y metodo</span> <br>
+                                    Models\Persona::hola(); <br>
+                                    Controllers\Personacontrollers::hola(); <br>
+                                ?>
+                            </span>
+                        </code>
+                    </div>
+                </div><!--Namespaces-->
+
+                <div class=" scroll-margin-top border-b-2 border-b-blue-800 mb-3" id="platamiento-e-ini">
+                    <h2 class="font-bold text-3xl mb-3">Proyecto CRUD basico de MVC</h2>
+                    <div class="mb-3"></div>
+                    <div class="bg-slate-100 p-2 mb-3 rounded">
+                        <span class="text-blue-800">
+
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
